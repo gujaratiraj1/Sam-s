@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Sam's Interiors for luxury interior design consultations. Book your appointment or request project pricing.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.samsinteriors.com/contact.html">
+    <meta property="og:title" content="Contact Us | Sam's Interiors">
+    <meta property="og:description" content="Get in touch with Sam's Interiors to discuss your luxury interior design project.">
+    <meta property="og:image" content="https://www.samsinteriors.com/assets/images/og-contact.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.samsinteriors.com/contact.html">
+    <meta name="twitter:title" content="Contact Us | Sam's Interiors">
+    <meta name="twitter:description" content="Get in touch with Sam's Interiors to discuss your luxury interior design project.">
+    <meta name="twitter:image" content="https://www.samsinteriors.com/assets/images/og-contact.jpg">
+    
+    <link rel="canonical" href="https://www.samsinteriors.com/contact.html">
+    <title>Contact Us | Sam's Interiors</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo" aria-label="Sam's Interiors Home">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image">
+                </a>
+                
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+                    <span class="nav-toggle-icon"></span>
+                </button>
+                
+                <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main id="main-content" role="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Get In Touch</h1>
+                <p class="page-subtitle">Let's discuss your vision</p>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 class="section-title">Contact Information</h2>
+                        <p class="contact-text">
+                            We'd love to hear about your project. Whether you're planning a complete home transformation 
+                            or seeking design consultation, our team is here to help bring your vision to life.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3 class="contact-item-title">Email</h3>
+                                <p><a href="mailto:hello@samsinteriors.com">hello@samsinteriors.com</a></p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <h3 class="contact-item-title">Phone</h3>
+                                <p><a href="tel:+919003032732">+91-9003032732</a></p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <h3 class="contact-item-title">Office Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 4:00 PM<br>
+                                Sunday: By appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-input" required aria-required="true">
+                                <span class="form-error" id="name-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" required aria-required="true">
+                                <span class="form-error" id="email-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="form-input">
+                                <span class="form-error" id="phone-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service" class="form-label">Service Interest</label>
+                                <select id="service" name="service" class="form-input">
+                                    <option value="">Select a service</option>
+                                    <option value="residential">Residential Design</option>
+                                    <option value="commercial">Commercial Design</option>
+                                    <option value="consultation">Consultation & Styling</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="6" class="form-input" required aria-required="true"></textarea>
+                                <span class="form-error" id="message-error" role="alert"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            
+                            <div id="form-success" class="form-success" role="alert" aria-live="polite" style="display: none;">
+                                Thank you! Your message has been sent. We'll get back to you within 24 hours.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo">
+                    <h3 class="footer-title">Sam's Interiors</h3>
+                    <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@samsinteriors.com">hello@samsinteriors.com</a></li>
+                        <li><a href="tel:+919003032732">+91-9003032732</a></li>
+                        <li>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/sams_interiors_archietects/?igsh=c2I0aG9kcGN3b29v&utm_source=qr#" aria-label="Instagram" class="social-link">Instagram</a>
+                                <a href="https://www.facebook.com/share/1EgQpC8eG7/?mibextid=wwXIfr" aria-label="Facebook" class="social-link">Facebook</a>
+                                <a href="https://www.linkedin.com/in/sams-interiors-and-architects-3572aa348/" aria-label="LinkedIn" class="social-link">LinkedIn</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Sam's Interiors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
+

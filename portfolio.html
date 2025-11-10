@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Sam's Interiors portfolio of luxury residential and commercial interior design projects. Award-winning design excellence.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.samsinteriors.com/portfolio.html">
+    <meta property="og:title" content="Portfolio | Sam's Interiors">
+    <meta property="og:description" content="Discover our curated collection of luxury interior design projects spanning residential and commercial spaces.">
+    <meta property="og:image" content="https://www.samsinteriors.com/assets/images/og-portfolio.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.samsinteriors.com/portfolio.html">
+    <meta name="twitter:title" content="Portfolio | Sam's Interiors">
+    <meta name="twitter:description" content="Discover our curated collection of luxury interior design projects spanning residential and commercial spaces.">
+    <meta name="twitter:image" content="https://www.samsinteriors.com/assets/images/og-portfolio.jpg">
+    
+    <link rel="canonical" href="https://www.samsinteriors.com/portfolio.html">
+    <title>Portfolio | Sam's Interiors</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo" aria-label="Sam's Interiors Home">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image">
+                </a>
+                
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+                    <span class="nav-toggle-icon"></span>
+                </button>
+                
+                <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="portfolio.html" class="nav-link active" aria-current="page">Portfolio</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main id="main-content" role="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Our Portfolio</h1>
+                <p class="page-subtitle">A curated collection of our finest work</p>
+            </div>
+        </section>
+        
+        <!-- Portfolio Filters -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="portfolio-filters" role="tablist" aria-label="Filter portfolio by category">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="portfolio-grid">All Projects</button>
+                    <button class="filter-btn" data-filter="residential" role="tab" aria-selected="false" aria-controls="portfolio-grid">Residential</button>
+                    <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false" aria-controls="portfolio-grid">Commercial</button>
+                    <button class="filter-btn" data-filter="hospitality" role="tab" aria-selected="false" aria-controls="portfolio-grid">Hospitality</button>
+                </div>
+                
+                <div class="portfolio-grid" id="portfolio-grid" role="tabpanel">
+                    <!-- Portfolio items will be loaded via JS from portfolio.json -->
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <button class="lightbox-prev" aria-label="Previous image">‹</button>
+            <button class="lightbox-next" aria-label="Next image">›</button>
+            <img id="lightbox-image" src="" alt="" class="lightbox-img">
+            <div class="lightbox-info">
+                <h3 id="lightbox-title" class="lightbox-title"></h3>
+                <p id="lightbox-description" class="lightbox-description"></p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo">
+                    <h3 class="footer-title">Sam's Interiors</h3>
+                    <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@samsinteriors.com">hello@samsinteriors.com</a></li>
+                        <li><a href="tel:+919003032732">+91-9003032732</a></li>
+                        <li>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/sams_interiors_archietects/?igsh=c2I0aG9kcGN3b29v&utm_source=qr#" aria-label="Instagram" class="social-link">Instagram</a>
+                                <a href="https://www.facebook.com/share/1EgQpC8eG7/?mibextid=wwXIfr" aria-label="Facebook" class="social-link">Facebook</a>
+                                <a href="https://www.linkedin.com/in/sams-interiors-and-architects-3572aa348/" aria-label="LinkedIn" class="social-link">LinkedIn</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Sam's Interiors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
+
