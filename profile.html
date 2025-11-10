@@ -3,29 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Sam's Interiors portfolio of luxury residential and commercial interior design projects. Award-winning design excellence.">
-    
-    <!-- Open Graph / Facebook -->
+    <meta name="description" content="Sam's Interiors Company Profile PDF — view and download our portfolio, services, and credentials.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.samsinteriors.com/portfolio.html">
-    <meta property="og:title" content="Portfolio | Sam's Interiors">
-    <meta property="og:description" content="Discover our curated collection of luxury interior design projects spanning residential and commercial spaces.">
-    <meta property="og:image" content="https://www.samsinteriors.com/assets/images/og-portfolio.jpg">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.samsinteriors.com/portfolio.html">
-    <meta name="twitter:title" content="Portfolio | Sam's Interiors">
-    <meta name="twitter:description" content="Discover our curated collection of luxury interior design projects spanning residential and commercial spaces.">
-    <meta name="twitter:image" content="https://www.samsinteriors.com/assets/images/og-portfolio.jpg">
-    
-    <link rel="canonical" href="https://www.samsinteriors.com/portfolio.html">
-    <title>Portfolio | Sam's Interiors</title>
-    
+    <meta property="og:title" content="Company Profile | Sam's Interiors">
+    <meta property="og:description" content="Explore Sam's Interiors company profile. View our work, services, and ethos.">
+    <meta property="og:image" content="assets/images/og-services.jpg">
+    <link rel="canonical" href="profile.html">
+    <title>Company Profile | Sam's Interiors</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -46,57 +33,40 @@
                     <ul class="nav-list">
                         <li><a href="index.html" class="nav-link">Home</a></li>
                         <li><a href="about.html" class="nav-link">About</a></li>
-                        <li><a href="portfolio.html" class="nav-link active" aria-current="page">Portfolio</a></li>
+                        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                         <li><a href="services.html" class="nav-link">Services</a></li>
                         <li><a href="blog.html" class="nav-link">Blog</a></li>
-                        <li><a href="profile.html" class="nav-link">Profile</a></li>
+                        <li><a href="profile.html" class="nav-link active" aria-current="page">Profile</a></li>
                         <li><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-    
+
     <main id="main-content" role="main">
-        <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Our Portfolio</h1>
-                <p class="page-subtitle">A curated collection of our finest work</p>
+                <h1 class="page-title">Company Profile</h1>
+                <p class="page-subtitle">View or download our company profile</p>
             </div>
         </section>
-        
-        <!-- Portfolio Filters -->
+
         <section class="section-padding">
-            <div class="container">
-                <div class="portfolio-filters" role="tablist" aria-label="Filter portfolio by category">
-                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="portfolio-grid">All Projects</button>
-                    <button class="filter-btn" data-filter="residential" role="tab" aria-selected="false" aria-controls="portfolio-grid">Residential</button>
-                    <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false" aria-controls="portfolio-grid">Commercial</button>
-                    <button class="filter-btn" data-filter="hospitality" role="tab" aria-selected="false" aria-controls="portfolio-grid">Hospitality</button>
+            <div class="container" style="max-width: 1000px;">
+                <div class="intro-cta" style="justify-content:flex-start;margin-bottom:1rem;">
+                    <a class="btn btn-primary" href="assets/images/Sam%27s%20Interiors%20Profile%20.pdf" download aria-label="Download Sam's Interiors Profile PDF">Download PDF</a>
+                    <a class="btn btn-outline" href="assets/images/Sam%27s%20Interiors%20Profile%20.pdf" target="_blank" rel="noopener" aria-label="Open Sam's Interiors Profile PDF in new tab">Open in new tab</a>
                 </div>
-                
-                <div class="portfolio-grid" id="portfolio-grid" role="tabpanel">
-                    <!-- Portfolio items will be loaded via JS from portfolio.json -->
-                </div>
+                <object data="assets/images/Sam%27s%20Interiors%20Profile%20.pdf" type="application/pdf" width="100%" height="900" aria-label="Sam's Interiors Company Profile">
+                    <p>Your browser can't display PDFs. 
+                        <a href="assets/images/Sam%27s%20Interiors%20Profile%20.pdf">Download the PDF</a> instead.
+                    </p>
+                </object>
             </div>
         </section>
     </main>
-    
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true">
-        <div class="lightbox-content">
-            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
-            <button class="lightbox-prev" aria-label="Previous image">‹</button>
-            <button class="lightbox-next" aria-label="Next image">›</button>
-            <img id="lightbox-image" src="" alt="" class="lightbox-img">
-            <div class="lightbox-info">
-                <h3 id="lightbox-title" class="lightbox-title"></h3>
-                <p id="lightbox-description" class="lightbox-description"></p>
-            </div>
-        </div>
-    </div>
-    
+
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
@@ -104,6 +74,7 @@
                     <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo">
                     <h3 class="footer-title">Sam's Interiors</h3>
                     <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
+                    <a class="btn btn-outline" href="assets/images/Sam%27s%20Interiors%20Profile%20.pdf" download>Download Profile</a>
                 </div>
                 
                 <div class="footer-section">
@@ -138,8 +109,15 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="js/main.js"></script>
+    <script>
+      // Basic focus to PDF embed on load for accessibility
+      document.addEventListener('DOMContentLoaded', function () {
+        const obj = document.querySelector('object[type=\"application/pdf\"]');
+        if (obj) obj.tabIndex = -1;
+      });
+    </script>
 </body>
 </html>
 
