@@ -4,8 +4,8 @@
       "title": "Manhattan Penthouse",
       "description": "A sophisticated urban retreat featuring floor-to-ceiling windows, custom millwork, and curated art collection.",
       "category": "residential",
-      "image": "assets/images/portfolio-penthouse.jpg",
-      "imageSrcset": "assets/images/portfolio-penthouse.jpg 1920w, assets/images/portfolio-penthouse-tablet.jpg 1024w, assets/images/portfolio-penthouse-mobile.jpg 480w",
+      "image": "assets/images/portfolio-penthouse.png",
+      "imageSrcset": "assets/images/portfolio-penthouse.png 1920w, assets/images/portfolio-penthouse-tablet.png 1024w, assets/images/portfolio-penthouse-mobile.png 480w",
       "alt": "Luxury Manhattan penthouse living room with modern furnishings and city views",
       "tags": ["Residential", "Modern", "Luxury"]
     },
