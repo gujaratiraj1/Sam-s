@@ -13,8 +13,8 @@
       "title": "Corporate Headquarters",
       "description": "Award-winning commercial design that balances productivity with wellness, featuring biophilic elements and flexible workspaces.",
       "category": "commercial",
-      "image": "assets/images/portfolio-corporate.jpg",
-      "imageSrcset": "assets/images/portfolio-corporate.jpg 1920w, assets/images/portfolio-corporate-tablet.jpg 1024w, assets/images/portfolio-corporate-mobile.jpg 480w",
+      "image": "assets/images/portfolio-corporate.png",
+      "imageSrcset": "assets/images/portfolio-corporate.png 1920w, assets/images/portfolio-corporate-tablet.png 1024w, assets/images/portfolio-corporate-mobile.png 480w",
       "alt": "Modern corporate office space with open work areas and natural lighting",
       "tags": ["Commercial", "Office", "Modern"]
     },

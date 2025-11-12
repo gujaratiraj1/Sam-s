@@ -17,11 +17,47 @@
         initPortfolio();
         initLightbox();
         initContactForm();
+        initContactWidget();
         initCounters();
         initLazyLoading();
         initCurrentYear();
         initSmoothScroll();
     });
+
+    // ============================================
+    // Floating contact widget accessibility/placement
+    // ============================================
+    function initContactWidget() {
+        const widget = document.querySelector('.contact-widget');
+        if (!widget) return;
+
+        // Ensure widget doesn't overlap mobile nav when open
+        const nav = document.getElementById('main-nav');
+        const navToggle = document.querySelector('.nav-toggle');
+
+        function adjustForNav() {
+            if (window.innerWidth < 768 && nav && nav.getAttribute('aria-hidden') === 'false') {
+                widget.classList.add('shift-left');
+            } else {
+                widget.classList.remove('shift-left');
+            }
+        }
+
+        // Observe nav aria-hidden changes and window resize
+        if (nav) {
+            const observer = new MutationObserver(adjustForNav);
+            observer.observe(nav, { attributes: true, attributeFilter: ['aria-hidden'] });
+        }
+
+        window.addEventListener('resize', adjustForNav);
+
+        // run once to set initial state
+        adjustForNav();
+
+        // Keyboard accessibility: make actions tabbable in order
+        const actions = widget.querySelectorAll('.contact-btn');
+        actions.forEach(a => a.setAttribute('tabindex', '0'));
+    }
 
     // ============================================
     // Navigation - Mobile menu toggle

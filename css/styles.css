@@ -399,6 +399,87 @@ p {
     color: var(--color-primary);
 }
 
+/* Hero centered logo - sits above the hero title and scales responsively */
+.hero-logo-center {
+    display: block;
+    margin: 0 auto 1rem;
+    max-width: 220px;
+    width: 40%;
+    min-width: 120px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(13,11,8,0.12);
+}
+
+@media (max-width: 768px) {
+    .hero-logo-center { max-width: 160px; width: 48%; padding: 6px 10px; }
+}
+
+@media (max-width: 480px) {
+    .hero-logo-center { max-width: 140px; width: 56%; padding: 6px 8px; }
+}
+
+/* ============================================
+   Floating Contact Widget
+   ============================================ */
+.contact-widget {
+    position: fixed;
+    right: -6px; /* slightly off-screen to match screenshot */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.contact-widget.shift-left {
+    /* when nav drawer opens, slide widget left to avoid overlap */
+    transform: translate(-220px, -50%);
+}
+
+.contact-actions {
+    list-style: none;
+    margin: 0;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--color-surface);
+    /* Rounded on left side, square on right to appear clipped */
+    border-radius: 12px 0 0 12px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    overflow: visible;
+    min-width: 64px;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-btn svg { width: 22px; height: 22px; display: block; }
+
+.contact-btn:focus,
+.contact-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-xl); outline: none; }
+
+.contact-whatsapp svg path { fill: #25D366; }
+.contact-call svg path { fill: #2EA6FF; }
+
+@media (max-width: 480px) {
+    .contact-widget { right: 12px; bottom: 16px; }
+    .contact-actions { padding: 6px; }
+}
+
 .btn-primary:hover,
 .btn-primary:focus {
     background: var(--color-link-hover);
