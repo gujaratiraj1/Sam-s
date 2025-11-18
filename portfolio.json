@@ -46,6 +46,16 @@
       "tags": ["Residential", "Family", "Contemporary"]
     },
     {
+      "title": "Skyline Residence Walkthrough",
+      "description": "Video tour highlighting our latest high-rise residence, featuring layered lighting, bespoke furniture, and seamless spatial planning.",
+      "category": "residential",
+      "image": "https://img.youtube.com/vi/t-pvJNhNLTc/hqdefault.jpg",
+      "imageSrcset": "https://img.youtube.com/vi/t-pvJNhNLTc/hqdefault.jpg 1280w, https://img.youtube.com/vi/t-pvJNhNLTc/mqdefault.jpg 640w, https://img.youtube.com/vi/t-pvJNhNLTc/default.jpg 320w",
+      "alt": "Thumbnail for the Skyline Residence interior walkthrough video",
+      "tags": ["Residential", "Video Tour", "Luxury"],
+      "videoUrl": "https://youtu.be/t-pvJNhNLTc?si=7n0ObU95P2EmOtgG"
+    },
+    {
       "title": "Tech Startup Office",
       "description": "A vibrant commercial space designed to inspire innovation, featuring collaborative zones, quiet pods, and dynamic color accents.",
       "category": "commercial",
@@ -53,6 +63,315 @@
       "imageSrcset": "assets/images/portfolio-startup.jpg 1920w, assets/images/portfolio-startup-tablet.jpg 1024w, assets/images/portfolio-startup-mobile.jpg 480w",
       "alt": "Modern tech startup office with collaborative workspaces and vibrant design",
       "tags": ["Commercial", "Startup", "Innovative"]
+    },
+    {
+      "title": "Flat_1 Luxury Residence",
+      "description": "A curated three-bedroom residence featuring layered lighting, brass accents, and bespoke furniture detailing.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_1/f1_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image6.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image7.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image8.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image9.jpeg"
+      ],
+      "alt": "Modern family home living space with comfortable seating and warm color palette",
+      "tags": ["Residential", "Family", "Contemporary"]
+    }
+  ],
+  "galleries": [
+    {
+      "title": "Flat_1 Luxury Residence",
+      "description": "A curated three-bedroom residence featuring layered lighting, brass accents, and bespoke furniture detailing.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_1/f1_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image6.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image7.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image8.jpeg",
+        "assets/images/Sam's proj_website/Flat_1/f1_image9.jpeg"
+      ]
+    },
+    {
+      "title": "Flat_2 Contemporary Home",
+      "description": "An expansive flat with custom wood paneling, muted neutrals, and sculptural lighting that transitions from foyer to bedrooms.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_2/f2_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image6.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image7.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image8.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image9.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image10.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image11.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image12.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image13.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image14.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image15.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image16.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image17.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image18.jpeg",
+        "assets/images/Sam's proj_website/Flat_2/f2_image19.jpeg"
+      ]
+    },
+    {
+      "title": "Flat_3 Urban Retreat",
+      "description": "Layered textures and sleek built-ins create a calm backdrop for this city apartment, balancing soft neutrals with matte black details.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_3/f3_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_3/f3_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_3/f3_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_3/f3_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_3/f3_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_3/f3_image6.jpeg",
+        "assets/images/Sam's proj_website/Flat_3/f3_image7.jpeg",
+        "assets/images/Sam's proj_website/Flat_3/f3_image8.jpeg",
+        "assets/images/Sam's proj_website/Flat_3/f3_image9.jpeg"
+      ]
+    },
+    {
+      "title": "Flat_4 Minimal Luxe",
+      "description": "Open living, fluted panels, and stone accents bring a warm minimalism to this family flat while keeping storage cleverly concealed.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_4/f4_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_4/f4_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_4/f4_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_4/f4_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_4/f4_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_4/f4_image6.jpeg"
+      ]
+    },
+    {
+      "title": "Flat_5 Grand Residence",
+      "description": "A statement residence featuring marble inlays, dramatic ceilings, and custom-crafted furniture with brass and mirror accents.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_5/f5_image.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image6.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image7.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image8.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image9.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image10.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image11.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image12.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image13.jpeg",
+        "assets/images/Sam's proj_website/Flat_5/f5_image14.jpeg"
+      ]
+    },
+    {
+      "title": "Flat_6 Modern Living",
+      "description": "Contemporary design with clean lines, natural light, and thoughtfully curated spaces that blend functionality with aesthetic appeal.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_6/f6_image.jpeg",
+        "assets/images/Sam's proj_website/Flat_6/f6_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_6/f6_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_6/f6_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_6/f6_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_6/f6_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_6/f6_image6.jpeg",
+        "assets/images/Sam's proj_website/Flat_6/f6_image7.jpeg"
+      ]
+    },
+    {
+      "title": "Flat_7 Elegant Spaces",
+      "description": "A comprehensive design showcase featuring refined interiors, custom detailing, and sophisticated material selections throughout.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_7/f7_image.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image6.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image7.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image8.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image9.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image10.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image11.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image12.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image13.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image14.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image15.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image16.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image17.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image18.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image19.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image20.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image21.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image22.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image23.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image24.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image25.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image26.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/f7_image27.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/7_image21.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM.jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (1).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (2).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (3).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (4).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (5).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (6).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (7).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (8).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (9).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (10).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (11).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (12).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (13).jpeg",
+        "assets/images/Sam's proj_website/Flat_7/WhatsApp Image 2025-11-13 at 3.53.34 PM (14).jpeg"
+      ]
+    },
+    {
+      "title": "Flat_8 Refined Design",
+      "description": "Sophisticated interiors with attention to detail, featuring elegant finishes and harmonious color palettes.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Flat_8/f8_image1.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image2.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image3.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image4.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image5.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image6.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image7.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image8.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image9.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image10.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image11.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image13.jpeg",
+        "assets/images/Sam's proj_website/Flat_8/f8_image14.jpeg"
+      ]
+    },
+    {
+      "title": "Interiors Collection",
+      "description": "A curated selection of interior spaces showcasing diverse design approaches and aesthetic sensibilities.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Interirs/image1.jpeg",
+        "assets/images/Sam's proj_website/Interirs/image2.jpeg",
+        "assets/images/Sam's proj_website/Interirs/imagE3.jpeg",
+        "assets/images/Sam's proj_website/Interirs/image4.jpeg",
+        "assets/images/Sam's proj_website/Interirs/image5.jpeg",
+        "assets/images/Sam's proj_website/Interirs/image6.jpeg",
+        "assets/images/Sam's proj_website/Interirs/image7.jpeg",
+        "assets/images/Sam's proj_website/Interirs/image8.jpeg",
+        "assets/images/Sam's proj_website/Interirs/image9.jpeg"
+      ]
+    },
+    {
+      "title": "Pooja_1 Sacred Space",
+      "description": "A thoughtfully designed prayer room featuring traditional elements with modern execution and serene ambiance.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Pooja_1/1.jpeg",
+        "assets/images/Sam's proj_website/Pooja_1/2.jpeg",
+        "assets/images/Sam's proj_website/Pooja_1/3.jpeg",
+        "assets/images/Sam's proj_website/Pooja_1/4.jpeg",
+        "assets/images/Sam's proj_website/Pooja_1/5.jpeg",
+        "assets/images/Sam's proj_website/Pooja_1/6.jpeg",
+        "assets/images/Sam's proj_website/Pooja_1/7.jpeg",
+        "assets/images/Sam's proj_website/Pooja_1/8.jpeg"
+      ]
+    },
+    {
+      "title": "Villa _1 Luxury Estate",
+      "description": "An expansive villa featuring grand spaces, premium materials, and architectural elegance throughout.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Villa _1/1.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/2.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/3.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/4.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/5.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/6.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/7.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/8.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/9.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/10.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/11.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/12.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/13.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/14.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/16.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/17.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/18.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/19.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/20.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/21.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/22.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/23.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/24.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/25.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/26.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/27.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/28.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/29.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/30.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/31.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/32.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/33.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/34.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/35.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/36.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/37.jpeg",
+        "assets/images/Sam's proj_website/Villa _1/38.jpeg"
+      ]
+    },
+    {
+      "title": "Villa_2 Contemporary Villa",
+      "description": "Modern villa design with open layouts, natural materials, and seamless indoor-outdoor connections.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Villa_2/1.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/2.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/3.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/4.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/5.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/6.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/7.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/8.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/9.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/10.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/11.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/12.jpeg",
+        "assets/images/Sam's proj_website/Villa_2/13.jpeg"
+      ]
+    },
+    {
+      "title": "Villa_3 Elegant Residence",
+      "description": "A refined villa featuring sophisticated design elements, premium finishes, and thoughtfully planned spaces.",
+      "category": "residential",
+      "images": [
+        "assets/images/Sam's proj_website/Villa_3/1.jpeg",
+        "assets/images/Sam's proj_website/Villa_3/2.jpeg",
+        "assets/images/Sam's proj_website/Villa_3/3.jpeg",
+        "assets/images/Sam's proj_website/Villa_3/4.jpeg",
+        "assets/images/Sam's proj_website/Villa_3/5.jpeg",
+        "assets/images/Sam's proj_website/Villa_3/6.jpeg",
+        "assets/images/Sam's proj_website/Villa_3/7.jpeg",
+        "assets/images/Sam's proj_website/Villa_3/8.jpeg"
+      ]
     }
   ]
 }

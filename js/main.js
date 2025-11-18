@@ -120,20 +120,24 @@
         
         if (!portfolioGrid && !featuredPortfolio) return;
 
-        // Load portfolio data
-        fetch('portfolio.json')
-            .then(response => {
-                if (!response.ok) throw new Error('Failed to load portfolio');
-                return response.json();
-            })
-            .then(data => {
-                if (portfolioGrid) {
-                    renderPortfolio(portfolioGrid, data.items);
-                    initPortfolioFilters(portfolioGrid, data.items);
+        loadPortfolioData()
+            .then(rawData => {
+                if (!rawData) throw new Error('Portfolio data unavailable');
+                const data = normalizePortfolioData(rawData);
+
+                // Convert galleries to portfolio items
+                const galleryItems = convertGalleriesToItems(data.galleries);
+                const allItems = [...data.items, ...galleryItems];
+
+                if (portfolioGrid && allItems.length) {
+                    renderPortfolio(portfolioGrid, allItems);
+                    initPortfolioFilters(portfolioGrid, allItems);
+                } else if (portfolioGrid) {
+                    portfolioGrid.innerHTML = '<p>No portfolio items available.</p>';
                 }
-                if (featuredPortfolio) {
-                    // Show first 3 items on homepage
-                    const featured = data.items.slice(0, 3);
+
+                if (featuredPortfolio && allItems.length) {
+                    const featured = allItems.slice(0, 3);
                     renderPortfolio(featuredPortfolio, featured);
                 }
             })
@@ -145,11 +149,114 @@
             });
     }
 
+    function convertGalleriesToItems(galleries) {
+        if (!Array.isArray(galleries) || galleries.length === 0) return [];
+        
+        return galleries.map(gallery => {
+            const images = Array.isArray(gallery.images) ? gallery.images : [];
+            const firstImage = images[0] || '';
+            
+            return {
+                title: gallery.title || 'Project Gallery',
+                description: gallery.description || '',
+                category: gallery.category || 'residential',
+                image: firstImage,
+                imageSrcset: firstImage,
+                alt: `${gallery.title || 'Project'} gallery preview`,
+                tags: ['Residential', 'Gallery'],
+                isGallery: true,
+                galleryImages: images
+            };
+        });
+    }
+
+    function loadPortfolioData() {
+        const shouldAttemptFetch = window.location.protocol !== 'file:';
+
+        if (!shouldAttemptFetch && window.PORTFOLIO_DATA) {
+            return Promise.resolve(window.PORTFOLIO_DATA);
+        }
+
+        return fetch('portfolio.json', { cache: 'no-cache' })
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load portfolio.json');
+                return response.json();
+            })
+            .catch(error => {
+                if (window.PORTFOLIO_DATA) {
+                    console.warn('Falling back to inline portfolio data:', error);
+                    return window.PORTFOLIO_DATA;
+                }
+                throw error;
+            });
+    }
+
+    function normalizePortfolioData(data) {
+        const sanitizedItems = Array.isArray(data.items) ? data.items.map(item => ({
+            ...item,
+            image: getSafeAssetUrl(item.image),
+            imageSrcset: getSafeSrcset(item.imageSrcset || item.image),
+            tags: Array.isArray(item.tags) ? item.tags : []
+        })) : [];
+
+        const sanitizedGalleries = Array.isArray(data.galleries) ? data.galleries.map(gallery => ({
+            ...gallery,
+            images: Array.isArray(gallery.images) ? gallery.images.map(getSafeAssetUrl) : []
+        })) : [];
+
+        return {
+            items: sanitizedItems,
+            galleries: sanitizedGalleries
+        };
+    }
+
+    function getSafeAssetUrl(path = '') {
+        if (!path) return '';
+        if (/^https?:\/\//i.test(path)) return path;
+        return encodeURI(path).replace(/'/g, '%27');
+    }
+
+    function getSafeSrcset(srcset = '') {
+        if (!srcset) return '';
+        return srcset.split(',')
+            .map(entry => {
+                const trimmed = entry.trim();
+                if (!trimmed) return '';
+                const parts = trimmed.split(/\s+/);
+                const url = parts.shift();
+                const descriptor = parts.join(' ');
+                const safeUrl = getSafeAssetUrl(url);
+                return descriptor ? `${safeUrl} ${descriptor}` : safeUrl;
+            })
+            .filter(Boolean)
+            .join(', ');
+    }
+
+    function getTagsMarkup(tags = []) {
+        if (!Array.isArray(tags) || tags.length === 0) return '';
+        return tags.map(tag => `<span class="portfolio-tag">${tag}</span>`).join('');
+    }
+
+    function getVideoBadgeMarkup(item) {
+        if (!item.videoUrl) return '';
+        return `
+            <span class="portfolio-video-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M10 8l6 4-6 4V8z"></path>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18
+                             c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                </svg>
+                Video
+            </span>
+        `;
+    }
+
     function renderPortfolio(container, items) {
         if (!container || !items || items.length === 0) return;
 
         container.innerHTML = items.map(item => `
             <article class="portfolio-item" data-category="${item.category}" tabindex="0" role="button" aria-label="View ${item.title}">
+                ${getVideoBadgeMarkup(item)}
                 <img src="${item.image}" 
                      srcset="${item.imageSrcset || item.image}"
                      alt="${item.alt || item.title}"
@@ -159,7 +266,7 @@
                     <h3 class="portfolio-title">${item.title}</h3>
                     <p class="portfolio-description">${item.description}</p>
                     <div class="portfolio-tags">
-                        ${item.tags.map(tag => `<span class="portfolio-tag">${tag}</span>`).join('')}
+                        ${getTagsMarkup(item.tags)}
                     </div>
                 </div>
             </article>
@@ -178,6 +285,7 @@
             });
         });
     }
+
 
     function initPortfolioFilters(container, items) {
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -279,8 +387,21 @@
         const lightbox = document.getElementById('lightbox');
         if (!lightbox) return;
 
-        currentLightboxItems = allItems.length > 0 ? allItems : [item];
-        currentLightboxIndex = allItems.length > 0 ? allItems.findIndex(i => i.title === item.title) : 0;
+        // If item is a gallery, convert gallery images to items for navigation
+        if (item.isGallery && Array.isArray(item.galleryImages) && item.galleryImages.length > 0) {
+            currentLightboxItems = item.galleryImages.map((imageUrl, index) => ({
+                title: item.title,
+                description: item.description,
+                image: imageUrl,
+                alt: `${item.title} - Image ${index + 1} of ${item.galleryImages.length}`,
+                isGalleryImage: true,
+                galleryTitle: item.title
+            }));
+            currentLightboxIndex = 0;
+        } else {
+            currentLightboxItems = allItems.length > 0 ? allItems : [item];
+            currentLightboxIndex = allItems.length > 0 ? allItems.findIndex(i => i.title === item.title) : 0;
+        }
 
         updateLightboxContent();
         lightbox.setAttribute('aria-hidden', 'false');
@@ -297,6 +418,7 @@
 
         lightbox.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        resetLightboxMedia();
     }
 
     function navigateLightbox(direction) {
@@ -316,17 +438,108 @@
         const lightbox = document.getElementById('lightbox');
         if (!lightbox || currentLightboxItems.length === 0) return;
 
+        resetLightboxMedia();
+
         const item = currentLightboxItems[currentLightboxIndex];
         const img = lightbox.querySelector('#lightbox-image');
         const title = lightbox.querySelector('#lightbox-title');
         const description = lightbox.querySelector('#lightbox-description');
+        const videoWrapper = lightbox.querySelector('.lightbox-video-wrapper');
+        const video = lightbox.querySelector('#lightbox-video');
 
         if (img) {
             img.src = item.image;
             img.alt = item.alt || item.title;
         }
-        if (title) title.textContent = item.title;
+
+        const videoLink = lightbox.querySelector('#lightbox-video-link');
+
+        if (videoWrapper && video) {
+            const embedUrl = item.videoUrl ? getYouTubeEmbedUrl(item.videoUrl) : null;
+            if (embedUrl) {
+                videoWrapper.style.display = 'block';
+                videoWrapper.setAttribute('aria-hidden', 'false');
+                video.src = embedUrl;
+                if (img) {
+                    img.style.display = 'none';
+                }
+            } else {
+                videoWrapper.style.display = 'none';
+                videoWrapper.setAttribute('aria-hidden', 'true');
+                video.src = '';
+                if (img) {
+                    img.style.display = '';
+                }
+            }
+
+            if (videoLink) {
+                if (item.videoUrl) {
+                    videoLink.href = item.videoUrl;
+                    videoLink.style.display = 'inline-flex';
+                } else {
+                    videoLink.removeAttribute('href');
+                    videoLink.style.display = 'none';
+                }
+            }
+        }
+
+        if (title) {
+            // Show image counter for gallery images
+            if (item.isGalleryImage && currentLightboxItems.length > 1) {
+                title.textContent = `${item.galleryTitle || item.title} (${currentLightboxIndex + 1} / ${currentLightboxItems.length})`;
+            } else {
+                title.textContent = item.title;
+            }
+        }
         if (description) description.textContent = item.description || '';
+    }
+
+    function getYouTubeEmbedUrl(url) {
+        if (!url) return null;
+        const regex = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([\w-]{11})/;
+        const match = url.match(regex);
+        if (!match || !match[1]) return null;
+
+        const base = `https://www.youtube-nocookie.com/embed/${match[1]}`;
+        const params = new URLSearchParams({
+            rel: '0',
+            modestbranding: '1',
+            playsinline: '1'
+        });
+
+        if (!prefersReducedMotion) {
+            params.set('autoplay', '1');
+        }
+
+        if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+            params.set('origin', window.location.origin);
+        }
+
+        return `${base}?${params.toString()}`;
+    }
+
+    function resetLightboxMedia() {
+        const lightbox = document.getElementById('lightbox');
+        if (!lightbox) return;
+        const img = lightbox.querySelector('#lightbox-image');
+        const videoWrapper = lightbox.querySelector('.lightbox-video-wrapper');
+        const video = lightbox.querySelector('#lightbox-video');
+        const videoLink = lightbox.querySelector('#lightbox-video-link');
+
+        if (videoWrapper && video) {
+            videoWrapper.style.display = 'none';
+            videoWrapper.setAttribute('aria-hidden', 'true');
+            video.src = '';
+        }
+
+        if (videoLink) {
+            videoLink.removeAttribute('href');
+            videoLink.style.display = 'none';
+        }
+
+        if (img) {
+            img.style.display = '';
+        }
     }
 
     // ============================================

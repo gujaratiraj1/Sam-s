@@ -67,7 +67,7 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Our Portfolio</h1>
+                <h1 class="page-title">Our Portfolio</h1>                               
                 <p class="page-subtitle">A curated collection of our finest work</p>
             </div>
         </section>
@@ -95,7 +95,24 @@
             <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
             <button class="lightbox-prev" aria-label="Previous image">‹</button>
             <button class="lightbox-next" aria-label="Next image">›</button>
-            <img id="lightbox-image" src="" alt="" class="lightbox-img">
+            <div class="lightbox-media">
+                <img id="lightbox-image" src="" alt="" class="lightbox-img">
+                <div class="lightbox-video-wrapper" aria-hidden="true">
+                    <iframe
+                        id="lightbox-video"
+                        class="lightbox-video"
+                        src=""
+                        title="Portfolio video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <a id="lightbox-video-link" class="lightbox-video-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Watch this project on YouTube">
+                        Watch on YouTube
+                    </a>
+                </div>
+            </div>
             <div class="lightbox-info">
                 <h3 id="lightbox-title" class="lightbox-title"></h3>
                 <p id="lightbox-description" class="lightbox-description"></p>
@@ -167,6 +184,7 @@
             </li>
         </ul>
     </div>
+    <script src="js/portfolio-data.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
