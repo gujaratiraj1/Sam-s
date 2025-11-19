@@ -2138,6 +2138,13 @@ p {
     color: var(--color-accent);
 }
 
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    display: block;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: var(--spacing-xl);

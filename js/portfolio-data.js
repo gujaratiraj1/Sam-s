@@ -18,33 +18,7 @@ window.PORTFOLIO_DATA = {
             alt: "Modern corporate office space with open work areas and natural lighting",
             tags: ["Commercial", "Office", "Modern"]
         },
-        {
-            title: "Coastal Estate",
-            description: "A timeless beachfront residence blending indoor-outdoor living with natural materials and ocean-inspired palette.",
-            category: "residential",
-            image: "assets/images/portfolio-coastal.jpg",
-            imageSrcset: "assets/images/portfolio-coastal.jpg 1920w, assets/images/portfolio-coastal-tablet.jpg 1024w, assets/images/portfolio-coastal-mobile.jpg 480w",
-            alt: "Coastal estate interior with natural textures and ocean views",
-            tags: ["Residential", "Coastal", "Timeless"]
-        },
-        {
-            title: "Boutique Hotel Lobby",
-            description: "An elegant hospitality space that welcomes guests with refined luxury, featuring custom lighting and artisanal finishes.",
-            category: "hospitality",
-            image: "assets/images/portfolio-hotel.jpg",
-            imageSrcset: "assets/images/portfolio-hotel.jpg 1920w, assets/images/portfolio-hotel-tablet.jpg 1024w, assets/images/portfolio-hotel-mobile.jpg 480w",
-            alt: "Luxury boutique hotel lobby with elegant furnishings and ambient lighting",
-            tags: ["Hospitality", "Luxury", "Elegant"]
-        },
-        {
-            title: "Modern Family Home",
-            description: "A warm, functional family residence combining contemporary design with comfort, featuring custom storage solutions and durable materials.",
-            category: "residential",
-            image: "assets/images/portfolio-family.jpg",
-            imageSrcset: "assets/images/portfolio-family.jpg 1920w, assets/images/portfolio-family-tablet.jpg 1024w, assets/images/portfolio-family-mobile.jpg 480w",
-            alt: "Modern family home living space with comfortable seating and warm color palette",
-            tags: ["Residential", "Family", "Contemporary"]
-        },
+
         {
             title: "Skyline Residence Walkthrough",
             description: "Video tour highlighting our latest high-rise residence, featuring layered lighting, bespoke furniture, and seamless spatial planning.",
@@ -55,15 +29,7 @@ window.PORTFOLIO_DATA = {
             tags: ["Residential", "Video Tour", "Luxury"],
             videoUrl: "https://youtu.be/t-pvJNhNLTc?si=7n0ObU95P2EmOtgG"
         },
-        {
-            title: "Tech Startup Office",
-            description: "A vibrant commercial space designed to inspire innovation, featuring collaborative zones, quiet pods, and dynamic color accents.",
-            category: "commercial",
-            image: "assets/images/portfolio-startup.jpg",
-            imageSrcset: "assets/images/portfolio-startup.jpg 1920w, assets/images/portfolio-startup-tablet.jpg 1024w, assets/images/portfolio-startup-mobile.jpg 480w",
-            alt: "Modern tech startup office with collaborative workspaces and vibrant design",
-            tags: ["Commercial", "Startup", "Innovative"]
-        }
+
     ],
     galleries: [
         {

@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/images/Sam'sLogo.jpeg">
     <link rel="apple-touch-icon" href="assets/images/Sam'sLogo.jpeg">
     <link rel="shortcut icon" href="assets/images/Sam'sLogo.jpeg">
-    
-    <meta name="description" content="Explore Sam's Interiors portfolio of luxury residential and commercial interior design projects. Award-winning design excellence.">
-    
+
+    <meta name="description"
+        content="Explore Sam's Interiors portfolio of luxury residential and commercial interior design projects in Bangalore and Hyderabad. Award-winning design excellence.">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.samsinteriors.com/portfolio.html">
-    <meta property="og:title" content="Portfolio | Sam's Interiors">
-    <meta property="og:description" content="Discover our curated collection of luxury interior design projects spanning residential and commercial spaces.">
+    <meta property="og:title" content="Portfolio | Luxury Interiors in Bangalore & Hyderabad">
+    <meta property="og:description"
+        content="Discover our curated collection of luxury interior design projects spanning residential and commercial spaces in Bangalore and Hyderabad.">
     <meta property="og:image" content="https://www.samsinteriors.com/assets/images/og-portfolio.png">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.samsinteriors.com/portfolio.html">
-    <meta name="twitter:title" content="Portfolio | Sam's Interiors">
-    <meta name="twitter:description" content="Discover our curated collection of luxury interior design projects spanning residential and commercial spaces.">
+    <meta name="twitter:title" content="Portfolio | Luxury Interiors in Bangalore & Hyderabad">
+    <meta name="twitter:description"
+        content="Discover our curated collection of luxury interior design projects spanning residential and commercial spaces in Bangalore and Hyderabad.">
     <meta name="twitter:image" content="https://www.samsinteriors.com/assets/images/og-portfolio.png">
-    
+
     <link rel="canonical" href="https://www.samsinteriors.com/portfolio.html">
-    <title>Portfolio | Sam's Interiors</title>
-    
+    <title>Portfolio | Luxury Interiors in Bangalore & Hyderabad</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <header class="header" role="banner">
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="logo" aria-label="Sam's Interiors Home">
                     <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image">
                 </a>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="main-nav">
                     <span class="nav-toggle-icon"></span>
                 </button>
-                
+
                 <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation">
                     <ul class="nav-list">
                         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -62,35 +70,40 @@
             </div>
         </div>
     </header>
-    
+
     <main id="main-content" role="main">
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Our Portfolio</h1>                               
+                <h1 class="page-title">Our Portfolio</h1>
                 <p class="page-subtitle">A curated collection of our finest work</p>
             </div>
         </section>
-        
+
         <!-- Portfolio Filters -->
         <section class="section-padding">
             <div class="container">
                 <div class="portfolio-filters" role="tablist" aria-label="Filter portfolio by category">
-                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="portfolio-grid">All Projects</button>
-                    <button class="filter-btn" data-filter="residential" role="tab" aria-selected="false" aria-controls="portfolio-grid">Residential</button>
-                    <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false" aria-controls="portfolio-grid">Commercial</button>
-                    <button class="filter-btn" data-filter="hospitality" role="tab" aria-selected="false" aria-controls="portfolio-grid">Hospitality</button>
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true"
+                        aria-controls="portfolio-grid">All Projects</button>
+                    <button class="filter-btn" data-filter="residential" role="tab" aria-selected="false"
+                        aria-controls="portfolio-grid">Residential</button>
+                    <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false"
+                        aria-controls="portfolio-grid">Commercial</button>
+                    <button class="filter-btn" data-filter="hospitality" role="tab" aria-selected="false"
+                        aria-controls="portfolio-grid">Hospitality</button>
                 </div>
-                
+
                 <div class="portfolio-grid" id="portfolio-grid" role="tabpanel">
                     <!-- Portfolio items will be loaded via JS from portfolio.json -->
                 </div>
             </div>
         </section>
     </main>
-    
+
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true">
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title"
+        aria-hidden="true">
         <div class="lightbox-content">
             <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
             <button class="lightbox-prev" aria-label="Previous image">‹</button>
@@ -98,17 +111,12 @@
             <div class="lightbox-media">
                 <img id="lightbox-image" src="" alt="" class="lightbox-img">
                 <div class="lightbox-video-wrapper" aria-hidden="true">
-                    <iframe
-                        id="lightbox-video"
-                        class="lightbox-video"
-                        src=""
-                        title="Portfolio video player"
+                    <iframe id="lightbox-video" class="lightbox-video" src="" title="Portfolio video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                        loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                    <a id="lightbox-video-link" class="lightbox-video-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Watch this project on YouTube">
+                        allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <a id="lightbox-video-link" class="lightbox-video-link" href="#" target="_blank"
+                        rel="noopener noreferrer" aria-label="Watch this project on YouTube">
                         Watch on YouTube
                     </a>
                 </div>
@@ -119,7 +127,7 @@
             </div>
         </div>
     </div>
-    
+
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
@@ -128,7 +136,7 @@
                     <h3 class="footer-title">Sam's Interiors & Architects</h3>
                     <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
@@ -139,7 +147,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4 class="footer-heading">Connect</h4>
                     <ul class="footer-links">
@@ -147,38 +155,51 @@
                         <li><a href="tel:+919003032732">+91-9003032732</a></li>
                         <li>
                             <div class="social-links">
-                                <a href="https://www.instagram.com/sams_interiors_archietects/?igsh=c2I0aG9kcGN3b29v&utm_source=qr#" aria-label="Instagram" class="social-link">Instagram</a>
-                                <a href="https://www.facebook.com/share/1EgQpC8eG7/?mibextid=wwXIfr" aria-label="Facebook" class="social-link">Facebook</a>
-                                <a href="https://www.linkedin.com/in/sams-interiors-and-architects-3572aa348/" aria-label="LinkedIn" class="social-link">LinkedIn</a>
+                                <a href="https://www.instagram.com/sams_interiors_archietects/?igsh=c2I0aG9kcGN3b29v&utm_source=qr#"
+                                    aria-label="Instagram" class="social-link">Instagram</a>
+                                <a href="https://www.facebook.com/share/1EgQpC8eG7/?mibextid=wwXIfr"
+                                    aria-label="Facebook" class="social-link">Facebook</a>
+                                <a href="https://www.linkedin.com/in/sams-interiors-and-architects-3572aa348/"
+                                    aria-label="LinkedIn" class="social-link">LinkedIn</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year">2024</span> Sam's Interiors. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <!-- Floating contact widget (WhatsApp + Call) -->
     <div class="contact-widget" aria-hidden="false">
         <ul class="contact-actions" role="list">
             <li>
-                <a href="https://wa.me/919003032732?text=Hello%20Sam%27s%20Interiors" class="contact-btn contact-whatsapp" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/919003032732?text=Hello%20Sam%27s%20Interiors"
+                    class="contact-btn contact-whatsapp" aria-label="Chat on WhatsApp" target="_blank"
+                    rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none">
-                        <path d="M12.045 0C5.431 0 0 5.431 0 12.045c0 2.126.663 4.111 1.804 5.818L0 24l6.305-1.652c1.641.451 3.371.697 5.14.697 6.614 0 12.045-5.431 12.045-12.045C23.49 5.431 18.059 0 12.045 0zm0 21.75c-1.577 0-3.12-.426-4.476-1.23l-.32-.19-3.33.873.872-3.25-.205-.338a10.95 10.95 0 01-1.38-5.76c0-6.06 4.93-11 11-11s11 4.94 11 11-4.93 11-11 11z" fill="#25D366"/>
-                        <path d="M10 8.5c-.3 0-.5.2-.5.5v7c0 .3.2.5.5.5h4c.3 0 .5-.2.5-.5V9c0-.3-.2-.5-.5-.5h-4zm.5 1h3v6h-3v-6z" fill="#fff"/>
-                        <path d="M9.5 7.5c0-.3.2-.5.5-.5h4c.3 0 .5.2.5.5v1c0 .3-.2.5-.5.5h-4c-.3 0-.5-.2-.5-.5v-1z" fill="#fff"/>
-                        <path d="M9.5 15.5c0 .3.2.5.5.5h4c.3 0 .5-.2.5-.5v-1c0-.3-.2-.5-.5-.5h-4c-.3 0-.5.2-.5.5v1z" fill="#fff"/>
+                        <path
+                            d="M12.045 0C5.431 0 0 5.431 0 12.045c0 2.126.663 4.111 1.804 5.818L0 24l6.305-1.652c1.641.451 3.371.697 5.14.697 6.614 0 12.045-5.431 12.045-12.045C23.49 5.431 18.059 0 12.045 0zm0 21.75c-1.577 0-3.12-.426-4.476-1.23l-.32-.19-3.33.873.872-3.25-.205-.338a10.95 10.95 0 01-1.38-5.76c0-6.06 4.93-11 11-11s11 4.94 11 11-4.93 11-11 11z"
+                            fill="#25D366" />
+                        <path
+                            d="M10 8.5c-.3 0-.5.2-.5.5v7c0 .3.2.5.5.5h4c.3 0 .5-.2.5-.5V9c0-.3-.2-.5-.5-.5h-4zm.5 1h3v6h-3v-6z"
+                            fill="#fff" />
+                        <path d="M9.5 7.5c0-.3.2-.5.5-.5h4c.3 0 .5.2.5.5v1c0 .3-.2.5-.5.5h-4c-.3 0-.5-.2-.5-.5v-1z"
+                            fill="#fff" />
+                        <path d="M9.5 15.5c0 .3.2.5.5.5h4c.3 0 .5-.2.5-.5v-1c0-.3-.2-.5-.5-.5h-4c-.3 0-.5.2-.5.5v1z"
+                            fill="#fff" />
                     </svg>
                 </a>
             </li>
             <li>
                 <a href="tel:+919003032732" class="contact-btn contact-call" aria-label="Call Sam's Interiors">
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#2EA6FF"/>
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                            fill="#2EA6FF" />
                     </svg>
                 </a>
             </li>
@@ -187,5 +208,5 @@
     <script src="js/portfolio-data.js"></script>
     <script src="js/main.js"></script>
 </body>
-</html>
 
+</html>
