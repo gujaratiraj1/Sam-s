@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#0D0B08">
     
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/images/Sam'sLogo.jpeg">
@@ -25,14 +27,15 @@
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="logo" aria-label="Sam's Interiors Home">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image" width="160"
+                        height="60" decoding="async" loading="eager">
                 </a>
                 
                 <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
                     <span class="nav-toggle-icon"></span>
                 </button>
                 
-                <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation">
+                <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation" aria-hidden="true">
                     <ul class="nav-list">
                         <li><a href="index.html" class="nav-link">Home</a></li>
                         <li><a href="about.html" class="nav-link">About</a></li>
@@ -70,7 +73,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo" width="160"
+                        height="60" loading="lazy" decoding="async">
                     <h3 class="footer-title">Sam's Interior & Architects</h3>
                     <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
                 </div>
@@ -130,7 +134,7 @@
             </li>
         </ul>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
 

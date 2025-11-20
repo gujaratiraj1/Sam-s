@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sam's Interiors & Architects">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="format-detection" content="telephone=yes, address=yes, email=yes">
+    <meta name="theme-color" content="#0D0B08">
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/images/Sam'sLogo.jpeg">
@@ -11,13 +15,26 @@
     <link rel="shortcut icon" href="assets/images/Sam'sLogo.jpeg">
 
     <meta name="description"
-        content="Sam's Interiors Company Profile PDF — view and download our portfolio, services, and credentials.">
+        content="Download Sam's Interiors company profile to review our service matrix, project highlights, certifications, and delivery methodology.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Company Profile | Sam's Interiors">
     <meta property="og:description"
-        content="Explore Sam's Interiors company profile. View our work, services, and ethos.">
-    <meta property="og:image" content="assets/images/og-services.jpg">
-    <link rel="canonical" href="profile.html">
+        content="Access the Sam's Interiors profile PDF covering capabilities, accolades, and representative work across India and abroad.">
+    <meta property="og:image" content="https://www.samsinteriors.com/assets/images/og-services.png">
+    <meta property="og:url" content="https://www.samsinteriors.com/profile.html">
+    <meta property="og:site_name" content="Sam's Interiors & Architects">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Company Profile | Sam's Interiors">
+    <meta name="twitter:description"
+        content="Download the latest Sam's Interiors profile to understand our luxury interior design practice.">
+    <meta name="twitter:image" content="https://www.samsinteriors.com/assets/images/og-services.png">
+
+    <link rel="canonical" href="https://www.samsinteriors.com/profile.html">
+    <link rel="alternate" href="https://www.samsinteriors.com/profile.html" hreflang="en-in">
+    <link rel="alternate" href="https://www.samsinteriors.com/profile.html" hreflang="en">
+    <link rel="alternate" href="https://www.samsinteriors.com/profile.html" hreflang="x-default">
+
     <title>Company Profile | Sam's Interiors</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +42,34 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "DigitalDocument",
+                "@id": "https://www.samsinteriors.com/profile.html#document",
+                "name": "Sam's Interiors & Architects Company Profile",
+                "url": "https://www.samsinteriors.com/assets/images/Sam%27s%20Interiors%20Profile%20.pdf",
+                "inLanguage": "en-IN",
+                "description": "Downloadable PDF outlining services, awards, and representative projects.",
+                "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.samsinteriors.com/#organization",
+                    "name": "Sam's Interiors & Architects"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.samsinteriors.com/"},
+                    {"@type": "ListItem","position": 2,"name": "Company Profile","item": "https://www.samsinteriors.com/profile.html"}
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -34,7 +79,8 @@
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="logo" aria-label="Sam's Interiors Home">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image" width="160"
+                        height="60" decoding="async" loading="eager">
                 </a>
 
                 <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"
@@ -42,7 +88,7 @@
                     <span class="nav-toggle-icon"></span>
                 </button>
 
-                <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation">
+                <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation" aria-hidden="true">
                     <ul class="nav-list">
                         <li><a href="index.html" class="nav-link">Home</a></li>
                         <li><a href="about.html" class="nav-link">About</a></li>
@@ -87,7 +133,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo" width="160"
+                        height="60" loading="lazy" decoding="async">
                     <h3 class="footer-title">Sam's Interiors & Architects</h3>
                     <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
                     <a class="btn btn-outline" href="assets/images/Sam%27s%20Interiors%20Profile%20.pdf"
@@ -162,7 +209,7 @@
             </li>
         </ul>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <script>
         // Basic focus to PDF embed on load for accessibility
         document.addEventListener('DOMContentLoaded', function () {

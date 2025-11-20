@@ -3,36 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="author" content="Sam's Interiors & Architects">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="distribution" content="global">
+    <meta name="format-detection" content="telephone=yes, address=yes, email=yes">
+    <meta name="theme-color" content="#0D0B08">
+
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/images/Sam'sLogo.jpeg">
     <link rel="apple-touch-icon" href="assets/images/Sam'sLogo.jpeg">
     <link rel="shortcut icon" href="assets/images/Sam'sLogo.jpeg">
     
-    <meta name="description" content="Read the latest interior design insights, trends, and inspiration from Sam's Interiors luxury design blog.">
+    <meta name="description" content="Interior design insights, sustainability strategies, and global project lessons from Sam's Interiors studio.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.samsinteriors.com/blog.html">
-    <meta property="og:title" content="Blog | Sam's Interiors">
-    <meta property="og:description" content="Interior design insights, trends, and inspiration from luxury design experts.">
+    <meta property="og:title" content="Design Insights Blog | Sam's Interiors">
+    <meta property="og:description" content="Explore expert perspectives on luxury interiors, materials, lighting, and global project delivery.">
     <meta property="og:image" content="https://www.samsinteriors.com/assets/images/og-blog.png">
+    <meta property="og:site_name" content="Sam's Interiors & Architects">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:locale:alternate" content="en_US">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.samsinteriors.com/blog.html">
-    <meta name="twitter:title" content="Blog | Sam's Interiors">
-    <meta name="twitter:description" content="Interior design insights, trends, and inspiration from luxury design experts.">
+    <meta name="twitter:title" content="Design Insights Blog | Sam's Interiors">
+    <meta name="twitter:description" content="Luxury interior design trends and project stories for India-based and global audiences.">
     <meta name="twitter:image" content="https://www.samsinteriors.com/assets/images/og-blog.png">
+    <meta name="twitter:site" content="@samsinteriors">
+    <meta name="twitter:creator" content="@samsinteriors">
     
     <link rel="canonical" href="https://www.samsinteriors.com/blog.html">
-    <title>Blog | Sam's Interiors</title>
+    <link rel="alternate" href="https://www.samsinteriors.com/blog.html" hreflang="en-in">
+    <link rel="alternate" href="https://www.samsinteriors.com/blog.html" hreflang="en">
+    <link rel="alternate" href="https://www.samsinteriors.com/blog.html" hreflang="x-default">
+    
+    <title>Design Insights Blog | Sam's Interiors</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Blog",
+                "@id": "https://www.samsinteriors.com/blog.html#blog",
+                "name": "Design Insights by Sam's Interiors",
+                "url": "https://www.samsinteriors.com/blog.html",
+                "inLanguage": "en-IN",
+                "publisher": {
+                    "@type": "Organization",
+                    "@id": "https://www.samsinteriors.com/#organization",
+                    "name": "Sam's Interiors & Architects"
+                },
+                "blogPost": [
+                    {"@type": "BlogPosting","@id": "https://www.samsinteriors.com/post.html#timeless","headline": "The Art of Timeless Design: Beyond Trends"},
+                    {"@type": "BlogPosting","headline": "Mastering Layered Lighting in Luxury Interiors"},
+                    {"@type": "BlogPosting","headline": "Sustainable Luxury: The Future of Interior Design"}
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.samsinteriors.com/blog.html#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.samsinteriors.com/"},
+                    {"@type": "ListItem","position": 2,"name": "Blog","item": "https://www.samsinteriors.com/blog.html"}
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -41,14 +88,15 @@
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="logo" aria-label="Sam's Interiors Home">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image" width="160"
+                        height="60" decoding="async" loading="eager">
                 </a>
                 
                 <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
                     <span class="nav-toggle-icon"></span>
                 </button>
                 
-                <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation">
+                <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation" aria-hidden="true">
                     <ul class="nav-list">
                         <li><a href="index.html" class="nav-link">Home</a></li>
                         <li><a href="about.html" class="nav-link">About</a></li>
@@ -204,7 +252,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo" width="160"
+                        height="60" loading="lazy" decoding="async">
                     <h3 class="footer-title">Sam's Interiors & Architects</h3>
                     <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
                 </div>
@@ -264,6 +313,6 @@
             </li>
         </ul>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

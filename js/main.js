@@ -22,6 +22,8 @@
         initLazyLoading();
         initCurrentYear();
         initSmoothScroll();
+        initFAQAccordions();
+        initPrefetchLinks();
     });
 
     // ============================================
@@ -68,6 +70,25 @@
         
         if (!navToggle || !nav) return;
 
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+
+        function syncNavState() {
+            if (mediaQuery.matches) {
+                nav.setAttribute('aria-hidden', 'false');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            } else if (navToggle.getAttribute('aria-expanded') !== 'true') {
+                nav.setAttribute('aria-hidden', 'true');
+            }
+        }
+
+        syncNavState();
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', syncNavState);
+        } else {
+            mediaQuery.addListener(syncNavState);
+        }
+
         navToggle.addEventListener('click', function() {
             const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
             navToggle.setAttribute('aria-expanded', !isExpanded);
@@ -79,6 +100,8 @@
 
         // Close nav when clicking outside
         document.addEventListener('click', function(e) {
+            const isOverlayNav = window.matchMedia('(max-width: 767px)').matches;
+            if (!isOverlayNav) return;
             if (nav.getAttribute('aria-hidden') === 'false' && 
                 !nav.contains(e.target) && 
                 !navToggle.contains(e.target)) {
@@ -90,6 +113,8 @@
 
         // Close nav on escape key
         document.addEventListener('keydown', function(e) {
+            const isOverlayNav = window.matchMedia('(max-width: 767px)').matches;
+            if (!isOverlayNav) return;
             if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
                 navToggle.setAttribute('aria-expanded', 'false');
                 nav.setAttribute('aria-hidden', 'true');
@@ -834,6 +859,69 @@
             initHeroSlider();
         }
     });
+
+    // ============================================
+    // FAQ Accordions
+    // ============================================
+    function initFAQAccordions() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        if (!faqItems.length) return;
+
+        faqItems.forEach(item => {
+            const summary = item.querySelector('summary');
+            if (!summary) return;
+
+            summary.setAttribute('role', 'button');
+            summary.setAttribute('aria-expanded', 'false');
+
+            item.addEventListener('toggle', () => {
+                summary.setAttribute('aria-expanded', item.open ? 'true' : 'false');
+            });
+        });
+    }
+
+    // ============================================
+    // Strategic Link Prefetching
+    // ============================================
+    function initPrefetchLinks() {
+        const prefetchCandidates = document.querySelectorAll('[data-prefetch]');
+        if (!prefetchCandidates.length) return;
+
+        const prefetched = new Set();
+
+        function prefetch(url, as = 'document') {
+            if (!url || prefetched.has(url)) return;
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = url;
+            link.as = as;
+            document.head.appendChild(link);
+            prefetched.add(url);
+        }
+
+        prefetchCandidates.forEach(candidate => {
+            const url = candidate.getAttribute('data-prefetch');
+            const as = candidate.getAttribute('data-prefetch-as') || 'document';
+            if (!url) return;
+
+            const handler = () => prefetch(url, as);
+
+            candidate.addEventListener('mouseenter', handler, { once: true });
+            candidate.addEventListener('focus', handler, { once: true });
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            handler();
+                            observer.disconnect();
+                        }
+                    });
+                }, { rootMargin: '200px' });
+                observer.observe(candidate);
+            }
+        });
+    }
 
 })();
 
