@@ -1,6 +1,17 @@
 window.PORTFOLIO_DATA = {
     items: [
         {
+            title: "Full Interior Showcase",
+            description: "Complete walkthrough of our luxury interior design project, showcasing premium materials, ambient lighting design, and sophisticated spatial planning.",
+            category: "residential",
+            image: "assets/images/hero-home.png",
+            imageSrcset: "assets/images/hero-home.png 1920w, assets/images/hero-home-tablet.png 1024w, assets/images/hero-home-mobile.png 480w",
+            alt: "Thumbnail for the Full Interior video showcase",
+            tags: ["Residential", "Video Tour", "Design Showcase"],
+            videoUrl: "assets/FullInterior vedio.mp4",
+            isVideo: true
+        },
+        {
             title: "Manhattan Penthouse",
             description: "A sophisticated urban retreat featuring floor-to-ceiling windows, custom millwork, and curated art collection.",
             category: "residential",

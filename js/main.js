@@ -221,6 +221,7 @@
             ...item,
             image: getSafeAssetUrl(item.image),
             imageSrcset: getSafeSrcset(item.imageSrcset || item.image),
+            videoUrl: item.videoUrl ? getSafeAssetUrl(item.videoUrl) : item.videoUrl,
             tags: Array.isArray(item.tags) ? item.tags : []
         })) : [];
 
@@ -279,35 +280,64 @@
     function renderPortfolio(container, items) {
         if (!container || !items || items.length === 0) return;
 
-        container.innerHTML = items.map(item => `
-            <article class="portfolio-item" data-category="${item.category}" tabindex="0" role="button" aria-label="View ${item.title}">
-                ${getVideoBadgeMarkup(item)}
-                <img src="${item.image}" 
-                     srcset="${item.imageSrcset || item.image}"
-                     alt="${item.alt || item.title}"
-                     class="portfolio-image"
-                     loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3 class="portfolio-title">${item.title}</h3>
-                    <p class="portfolio-description">${item.description}</p>
-                    <div class="portfolio-tags">
-                        ${getTagsMarkup(item.tags)}
+        container.innerHTML = items.map(item => {
+            // Handle video items differently
+            if (item.isVideo && item.videoUrl) {
+                return `
+                    <article class="portfolio-item portfolio-video-item" data-category="${item.category}" role="region" aria-label="${item.title}">
+                        <div class="portfolio-video-wrapper">
+                            <video controls class="portfolio-video" preload="metadata" style="cursor: pointer;">
+                                <source src="${item.videoUrl}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">${item.title}</h3>
+                            <p class="portfolio-description">${item.description}</p>
+                            <div class="portfolio-tags">
+                                ${getTagsMarkup(item.tags)}
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }
+
+            // Regular image items
+            return `
+                <article class="portfolio-item" data-category="${item.category}" tabindex="0" role="button" aria-label="View ${item.title}">
+                    ${getVideoBadgeMarkup(item)}
+                    <img src="${item.image}" 
+                         srcset="${item.imageSrcset || item.image}"
+                         alt="${item.alt || item.title}"
+                         class="portfolio-image"
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">${item.title}</h3>
+                        <p class="portfolio-description">${item.description}</p>
+                        <div class="portfolio-tags">
+                            ${getTagsMarkup(item.tags)}
+                        </div>
                     </div>
-                </div>
-            </article>
-        `).join('');
+                </article>
+            `;
+        }).join('');
 
         // Add click/keyboard handlers for lightbox
-        const portfolioItems = container.querySelectorAll('.portfolio-item');
+        const portfolioItems = container.querySelectorAll('.portfolio-item:not(.portfolio-video-item)');
         portfolioItems.forEach((item, index) => {
-            const itemData = items[index];
-            item.addEventListener('click', () => openLightbox(itemData, items));
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openLightbox(itemData, items);
-                }
-            });
+            const allItems = container.querySelectorAll('.portfolio-item');
+            const itemIndex = Array.from(allItems).indexOf(item);
+            const itemData = items[itemIndex];
+            
+            if (itemData && !itemData.isVideo) {
+                item.addEventListener('click', () => openLightbox(itemData, items));
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(itemData, items);
+                    }
+                });
+            }
         });
     }
 

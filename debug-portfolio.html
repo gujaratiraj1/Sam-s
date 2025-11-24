@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Portfolio Video</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .debug-box { 
+            background: #f0f0f0; 
+            border: 2px solid #333; 
+            padding: 15px; 
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .success { border-color: green; background: #e8f5e9; }
+        .error { border-color: red; background: #ffebee; }
+        video { max-width: 100%; border: 2px solid blue; }
+        h2 { margin-top: 30px; border-bottom: 2px solid #333; padding-bottom: 10px; }
+        pre { background: #222; color: #0f0; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Portfolio Video Debug Page</h1>
+    
+    <div class="debug-box">
+        <h3>Step 1: Check if portfolio.json loads</h3>
+        <div id="json-status">Loading...</div>
+        <div id="json-preview"></div>
+    </div>
+
+    <div class="debug-box">
+        <h3>Step 2: Check first item</h3>
+        <div id="first-item"></div>
+    </div>
+
+    <div class="debug-box">
+        <h3>Step 3: Test video URL directly</h3>
+        <div id="url-test"></div>
+    </div>
+
+    <div class="debug-box">
+        <h3>Step 4: Render video with HTML5</h3>
+        <div id="video-render"></div>
+    </div>
+
+    <div class="debug-box">
+        <h3>Step 5: Check asset file exists</h3>
+        <div id="asset-check"></div>
+    </div>
+
+    <script>
+        console.log('=== PORTFOLIO DEBUG START ===');
+        
+        // Step 1: Load JSON
+        fetch('portfolio.json', { cache: 'no-cache' })
+            .then(response => {
+                console.log('Fetch response status:', response.status);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Portfolio data loaded successfully:', data);
+                document.getElementById('json-status').innerHTML = 
+                    '<span style="color:green">✓ portfolio.json loaded successfully</span>';
+                document.getElementById('json-preview').innerHTML = 
+                    '<pre>' + JSON.stringify(data, null, 2).substring(0, 500) + '...</pre>';
+
+                // Step 2: Check first item
+                if (!data.items || data.items.length === 0) {
+                    document.getElementById('first-item').innerHTML = 
+                        '<span style="color:red">✗ No items in portfolio.json</span>';
+                    return;
+                }
+
+                const firstItem = data.items[0];
+                console.log('First item:', firstItem);
+
+                let firstItemHTML = '<h4>' + firstItem.title + '</h4>';
+                firstItemHTML += '<p><strong>Category:</strong> ' + firstItem.category + '</p>';
+                firstItemHTML += '<p><strong>isVideo:</strong> ' + firstItem.isVideo + '</p>';
+                firstItemHTML += '<p><strong>videoUrl:</strong> ' + firstItem.videoUrl + '</p>';
+                firstItemHTML += '<p><strong>Has videoUrl:</strong> ' + (!!firstItem.videoUrl) + '</p>';
+                
+                if (firstItem.isVideo && firstItem.videoUrl) {
+                    firstItemHTML += '<span style="color:green">✓ Video item detected</span>';
+                } else {
+                    firstItemHTML += '<span style="color:red">✗ Not a video item OR missing videoUrl</span>';
+                }
+                document.getElementById('first-item').innerHTML = firstItemHTML;
+
+                // Step 3: Test video URL
+                const videoUrl = firstItem.videoUrl;
+                console.log('Testing URL:', videoUrl);
+                
+                let urlTest = '<p><strong>Original URL:</strong> ' + videoUrl + '</p>';
+                urlTest += '<p><strong>Encoded URL:</strong> ' + encodeURI(videoUrl) + '</p>';
+                
+                // Test if URL is accessible
+                fetch(videoUrl, { method: 'HEAD' })
+                    .then(r => {
+                        console.log('URL test response:', r.status);
+                        if (r.ok) {
+                            urlTest += '<p style="color:green"><strong>✓ Video file is accessible (HTTP ' + r.status + ')</strong></p>';
+                        } else {
+                            urlTest += '<p style="color:red"><strong>✗ Video file returned HTTP ' + r.status + '</strong></p>';
+                        }
+                        document.getElementById('url-test').innerHTML = urlTest;
+                    })
+                    .catch(err => {
+                        console.error('URL test error:', err);
+                        urlTest += '<p style="color:orange"><strong>⚠ Could not test URL (CORS or network issue)</strong></p>';
+                        document.getElementById('url-test').innerHTML = urlTest;
+                    });
+
+                // Step 4: Render video
+                if (firstItem.isVideo && firstItem.videoUrl) {
+                    const videoHTML = `
+                        <h4>Direct HTML5 Video Element:</h4>
+                        <video width="400" height="300" controls style="border: 2px solid blue; margin: 10px 0;">
+                            <source src="${firstItem.videoUrl}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p><strong>Source:</strong> ${firstItem.videoUrl}</p>
+                    `;
+                    document.getElementById('video-render').innerHTML = videoHTML;
+                    console.log('Video element rendered');
+                } else {
+                    document.getElementById('video-render').innerHTML = 
+                        '<span style="color:red">✗ First item is not a video</span>';
+                }
+            })
+            .catch(error => {
+                console.error('Error loading portfolio:', error);
+                document.getElementById('json-status').innerHTML = 
+                    '<span style="color:red">✗ Error loading portfolio.json: ' + error.message + '</span>';
+            });
+
+        // Step 5: Check if we can access the file path
+        console.log('Current page:', window.location.href);
+        console.log('Expected video path:', 'assets/FullInterior vedio.mp4');
+        document.getElementById('asset-check').innerHTML = 
+            '<p>Open browser DevTools (F12) → Network tab to see file requests</p>' +
+            '<p>Check if: <code>assets/FullInterior vedio.mp4</code> request succeeds</p>';
+    </script>
+</body>
+</html>
