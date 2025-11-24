@@ -217,13 +217,25 @@
     }
 
     function normalizePortfolioData(data) {
-        const sanitizedItems = Array.isArray(data.items) ? data.items.map(item => ({
-            ...item,
-            image: getSafeAssetUrl(item.image),
-            imageSrcset: getSafeSrcset(item.imageSrcset || item.image),
-            videoUrl: item.videoUrl ? getSafeAssetUrl(item.videoUrl) : item.videoUrl,
-            tags: Array.isArray(item.tags) ? item.tags : []
-        })) : [];
+        const sanitizedItems = Array.isArray(data.items) ? data.items.map(item => {
+            const copy = { ...item };
+
+            // If item has an images array (gallery embedded in items), use first image as thumbnail
+            if (Array.isArray(item.images) && item.images.length > 0) {
+                copy.galleryImages = item.images.map(getSafeAssetUrl);
+                copy.image = getSafeAssetUrl(item.images[0]);
+                copy.imageSrcset = getSafeSrcset((item.images || []).join(', '));
+                copy.isGallery = true;
+            } else {
+                copy.image = getSafeAssetUrl(item.image);
+                copy.imageSrcset = getSafeSrcset(item.imageSrcset || item.image);
+            }
+
+            copy.videoUrl = item.videoUrl ? getSafeAssetUrl(item.videoUrl) : item.videoUrl;
+            copy.tags = Array.isArray(item.tags) ? item.tags : [];
+
+            return copy;
+        }) : [];
 
         const sanitizedGalleries = Array.isArray(data.galleries) ? data.galleries.map(gallery => ({
             ...gallery,
@@ -307,10 +319,11 @@
                 <article class="portfolio-item" data-category="${item.category}" tabindex="0" role="button" aria-label="View ${item.title}">
                     ${getVideoBadgeMarkup(item)}
                     <img src="${item.image}" 
-                         srcset="${item.imageSrcset || item.image}"
-                         alt="${item.alt || item.title}"
-                         class="portfolio-image"
-                         loading="lazy">
+                        srcset="${item.imageSrcset || item.image}"
+                        alt="${item.alt || item.title}"
+                        class="portfolio-image"
+                        loading="lazy"
+                        decoding="async">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">${item.title}</h3>
                         <p class="portfolio-description">${item.description}</p>
