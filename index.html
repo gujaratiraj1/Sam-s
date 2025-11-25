@@ -49,6 +49,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Preload hero image for faster LCP (prefer generated WebP) -->
+    <link rel="preload" as="image" href="assets/images/generated/hero-home-1920.webp" type="image/webp" fetchpriority="high">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -99,7 +101,7 @@
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="logo" aria-label="Sam's Interiors Home">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image" width="160" height="60" loading="eager" decoding="async">
                 </a>
 
                 <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"
@@ -128,21 +130,26 @@
             <div class="hero-slider">
                 <div class="hero-slide active">
                     <picture>
-                        <!-- Use actual image files in assets/images (PNG) so responsive sources load on mobile/tablet -->
-                        <source media="(max-width: 480px)" srcset="assets/images/hero-home-mobile.png 480w">
-                        <source media="(max-width: 1024px)" srcset="assets/images/hero-home-tablet.png 1024w">
-                        <img src="assets/images/hero-home.png"
-                            srcset="assets/images/hero-home.png 1920w, assets/images/hero-home-tablet.png 1024w, assets/images/hero-home-mobile.png 480w"
+                        <!-- WebP (preferred) -->
+                        <source type="image/webp" media="(min-width:1025px)" srcset="assets/images/generated/hero-home-1920.webp 1920w">
+                        <source type="image/webp" media="(max-width:1024px) and (min-width:481px)" srcset="assets/images/generated/hero-home-1024.webp 1024w">
+                        <source type="image/webp" media="(max-width:480px)" srcset="assets/images/generated/hero-home-480.webp 480w">
+                        <!-- PNG/JPEG fallback -->
+                        <source media="(max-width: 480px)" srcset="assets/images/generated/hero-home-480.jpg 480w">
+                        <source media="(max-width: 1024px)" srcset="assets/images/generated/hero-home-1024.jpg 1024w">
+                        <img src="assets/images/generated/hero-home-1920.jpg"
+                            srcset="assets/images/generated/hero-home-1920.jpg 1920w, assets/images/generated/hero-home-1024.jpg 1024w, assets/images/generated/hero-home-480.jpg 480w"
                             alt="Luxurious living room with elegant furnishings and natural light" class="hero-image"
-                            loading="eager">
+                            width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high">
                     </picture>
                     <div class="hero-content">
                         <div class="container">
                             <!-- Centered logo above the hero title for improved brand visibility -->
-                            <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors logo" class="hero-logo-center">
-                            <h1 class="hero-title">Crafting Timeless Interiors</h1>
-                            <p class="hero-subtitle">Where luxury meets artistry in every detail</p>
+                            <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors logo" class="hero-logo-center" width="160" height="60" loading="eager" decoding="async">
+                            <h1 class="hero-title">Luxury Interior Designers in Bangalore — Crafting Timeless Interiors</h1>
+                            <p class="hero-subtitle">Award-winning interior designers in Bangalore — bespoke residential, modular kitchens and commercial interiors.</p>
                             <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+                            <a href="interior-designers-bangalore.html" class="btn btn-outline" style="margin-left:12px;">Explore Bangalore Projects</a>
                         </div>
                     </div>
                 </div>
@@ -303,7 +310,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo">
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo" width="160" height="60" loading="eager" decoding="async">
                     <h3 class="footer-title">Sam's Interiors & Architects</h3>
                     <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
                 </div>

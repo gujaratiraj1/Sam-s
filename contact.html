@@ -52,6 +52,9 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- EmailJS client (for client-side email sending) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -116,7 +119,7 @@
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="logo" aria-label="Sam's Interiors Home">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image" width="160"
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="logo-image" width="160" height="60" loading="eager" decoding="async"
                         height="60" decoding="async" loading="eager">
                 </a>
 
@@ -226,6 +229,11 @@
                                 style="display: none;">
                                 Thank you! Your message has been sent. We'll get back to you within 24 hours.
                             </div>
+
+                            <div id="form-error" class="form-error" role="alert" aria-live="polite"
+                                style="display: none; color: #8b0000; margin-top: 12px;">
+                                Sorry — we couldn't send your message. Please try again or email us directly at <a href="mailto:samsinterior2021@gmail.com">samsinterior2021@gmail.com</a>.
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -305,7 +313,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo" width="160"
+                    <img src="assets/images/Sam'sLogo.jpeg" alt="Sam's Interiors" class="footer-logo" width="160" height="60" loading="eager" decoding="async"
                         height="60" loading="lazy" decoding="async">
                     <h3 class="footer-title">Sam's Interior & Architects</h3>
                     <p class="footer-text">Creating exceptional interiors that stand the test of time.</p>
@@ -379,6 +387,21 @@
             </li>
         </ul>
     </div>
+    <script>
+        /*
+         * EmailJS init placeholder.
+         * Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key from the EmailJS dashboard.
+         * Example: emailjs.init('user_ABC123xyz');
+         */
+        if (window.emailjs && typeof emailjs.init === 'function') {
+            try {
+                emailjs.init('XRtVzp0NF4SYE-yw1');
+            } catch (e) {
+                console.warn('EmailJS init failed — please verify public key and connectivity');
+            }
+        }
+    </script>
+
     <script src="js/main.js" defer></script>
 </body>
 

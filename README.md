@@ -51,6 +51,26 @@ live-server
 #### Option 3: VS Code Live Server
 Install the "Live Server" extension in VS Code and click "Go Live" in the status bar.
 
+## Image optimization helper
+
+To improve page speed and Core Web Vitals you should generate WebP and resized images (for responsive srcset) and add width/height attributes so browsers can reserve space and avoid layout shifts.
+
+We include a helper script at `scripts/optimize_images.py` which uses Pillow to generate WebP and resized JPG variants.
+
+Install Pillow:
+
+```powershell
+pip install pillow
+```
+
+Generate optimized images (example):
+
+```powershell
+python scripts/optimize_images.py --src assets/images --out assets/images/generated --sizes 400 800 1200 1920
+```
+
+After running the script, point srcset / picture sources to `assets/images/generated/<name>-<width>.webp` (or `.jpg`) in your HTML. This will reduce LCP and improve image delivery across devices.
+
 ## 🎨 Customization
 
 ### Brand Colors
@@ -110,6 +130,35 @@ The contact form currently uses a placeholder submission. To connect a real back
 </script>
 ```
 4. Update `submitForm()` in `js/main.js` to use EmailJS API
+
+Example EmailJS template setup (copy into EmailJS when creating a template):
+
+Template name: Contact Form Template
+
+Template variables (use these names or update `js/main.js` to match):
+- {{name}}
+- {{email}}
+- {{phone}}
+- {{service}}
+- {{message}}
+- {{to_email}}  (set to samsinterior2021@gmail.com)
+
+Example template body (EmailJS):
+```
+From: {{name}} <{{email}}>
+Phone: {{phone}}
+Service Interest: {{service}}
+
+Message:
+{{message}}
+
+--
+Send replies to: {{email}}
+```
+
+Notes:
+- If you want EmailJS to deliver to `samsinterior2021@gmail.com`, include `to_email` in your template and set the value when calling `emailjs.send()` (the site already sets this to `samsinterior2021@gmail.com`).
+- Don't publish private SMTP or API keys in the repository. The public key (`emailjs.init`) is designed to be used in client-side code.
 
 ### Option 3: Custom Backend
 Update `submitForm()` function in `js/main.js` (around line 280) to POST to your endpoint:

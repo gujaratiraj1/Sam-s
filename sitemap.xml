@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.samsinteriors.com/interior-designers-bangalore.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.samsinteriors.com/services.html</loc>
     <lastmod>2025-11-19</lastmod>
     <priority>0.8</priority>
@@ -29,6 +34,16 @@
     <loc>https://www.samsinteriors.com/blog.html</loc>
     <lastmod>2025-11-19</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.samsinteriors.com/blog/modular-kitchen-guide-bangalore.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.samsinteriors.com/blog/bangalore-case-study-flat1.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.samsinteriors.com/profile.html</loc>

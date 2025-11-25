@@ -715,8 +715,59 @@
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
 
-        // Simulate form submission (replace with actual endpoint)
-        // For production: Replace this with actual API call
+        // Real submission via EmailJS (client-side) if configured; otherwise placeholder simulation.
+        // To enable EmailJS:
+        // 1) Sign up at https://www.emailjs.com
+        // 2) Create a service (service_xxx) and a template (template_xxx)
+        // 3) Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' below (and set your public key in contact.html)
+        if (window.emailjs) {
+            // Build template params from form fields
+            const templateParams = {
+                name: form.elements['name'] ? form.elements['name'].value : '',
+                email: form.elements['email'] ? form.elements['email'].value : '',
+                phone: form.elements['phone'] ? form.elements['phone'].value : '',
+                service: form.elements['service'] ? form.elements['service'].value : '',
+                message: form.elements['message'] ? form.elements['message'].value : '',
+                // Ensure recipient is set to the business email
+                to_email: 'samsinterior2021@gmail.com'
+            };
+
+            // Prefer sendForm if available (uses the form element directly)
+            if (typeof emailjs.sendForm === 'function') {
+                emailjs.sendForm('service_kj9zi8g', 'template_zv8kwjp', form)
+                    .then(() => {
+                        showSuccessMessage();
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }, (err) => {
+                        console.error('EmailJS sendForm error:', err);
+                        showErrorMessage();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    });
+                return;
+            }
+
+            // Fallback: use emailjs.send with explicit template parameters
+            if (typeof emailjs.send === 'function') {
+                emailjs.send('service_kj9zi8g', 'template_zv8kwjp', templateParams)
+                    .then(() => {
+                        showSuccessMessage();
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }, (err) => {
+                        console.error('EmailJS send error:', err);
+                        showErrorMessage();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    });
+                return;
+            }
+        }
+
+        // Fallback placeholder (keeps UX intact while EmailJS isn't configured)
         setTimeout(() => {
             // Example: Using a placeholder endpoint
             // fetch('/api/contact', { method: 'POST', body: formData })
@@ -751,6 +802,21 @@
             setTimeout(() => {
                 successMessage.style.display = 'none';
             }, 5000);
+        }
+    }
+
+    function showErrorMessage() {
+        const errorMessage = document.getElementById('form-error');
+        if (errorMessage) {
+            errorMessage.style.display = 'block';
+            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Hide after 8 seconds
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 8000);
+        } else {
+            alert('There was a problem sending your message. Please try again, or email us directly at samsinterior2021@gmail.com');
         }
     }
 
