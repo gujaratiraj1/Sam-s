@@ -465,18 +465,25 @@ p {
 /* ============================================
    Floating Contact Widget
    ============================================ */
+/* contact-widget placement uses CSS variables so JS can set a pixel top value while
+   preserving the default centered behaviour. --contact-top defaults to 50% and
+   --contact-offset keeps the translateY(-50%) centering until a pixel top is set. */
 .contact-widget {
     position: fixed;
     right: -6px; /* slightly off-screen to match screenshot */
-    top: 50%;
-    transform: translateY(-50%);
+    /* default placement is centered vertically */
+    --contact-top: 50%;
+    --contact-offset: -50%;
+    top: var(--contact-top);
+    transform: translateX(0) translateY(calc(var(--contact-offset)));
     z-index: 9999;
     pointer-events: auto;
+    transition: transform 180ms ease, top 160ms ease;
 }
 
 .contact-widget.shift-left {
-    /* when nav drawer opens, slide widget left to avoid overlap */
-    transform: translate(-220px, -50%);
+    /* when nav drawer opens, slide left while preserving vertical offset */
+    transform: translateX(-220px) translateY(calc(var(--contact-offset)));
 }
 
 .contact-actions {
@@ -493,6 +500,60 @@ p {
     border: 1px solid var(--color-border);
     overflow: visible;
     min-width: 64px;
+}
+
+/* Small vertical drag handle (left side) for repositioning the widget. Visible on hover/focus */
+.contact-widget-handle {
+    position: absolute;
+    left: -18px; /* sits outside the rounded edge */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(13,11,8,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: ns-resize;
+    outline: none;
+    touch-action: none; /* allow touch-drag handling in JS */
+    transition: background var(--transition-fast), opacity var(--transition-fast);
+    opacity: 0.6;
+}
+.contact-widget-handle:hover,
+.contact-widget-handle:focus {
+    opacity: 1;
+    background: rgba(13,11,8,0.09);
+}
+
+.contact-widget-handle::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    background: rgba(13,11,8,0.22);
+    border-radius: 2px;
+}
+
+/* When actively dragging — stronger visual cue */
+.contact-widget.dragging .contact-widget-handle {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.02);
+    background: rgba(13,11,8,0.11);
+}
+
+/* When using narrow viewports we keep the widget as bottom-fixed and allow horizontal spacing */
+@media (max-width: 480px) {
+    .contact-widget {
+        right: 12px;
+        bottom: 16px;
+        top: auto;
+        --contact-top: auto;
+        --contact-offset: 0px;
+        transform: none;
+    }
+
+    .contact-widget-handle { display: none; }
 }
 
 .contact-btn {

@@ -59,6 +59,198 @@
         // Keyboard accessibility: make actions tabbable in order
         const actions = widget.querySelectorAll('.contact-btn');
         actions.forEach(a => a.setAttribute('tabindex', '0'));
+
+        // --- Draggable vertical placement (mouse + touch + keyboard) ---
+        // Create or find a handle element to act as the drag target. This keeps
+        // clicks on the buttons separate from drag operations.
+        let handle = widget.querySelector('.contact-widget-handle');
+        if (!handle) {
+            handle = document.createElement('button');
+            handle.type = 'button';
+            handle.className = 'contact-widget-handle';
+            handle.setAttribute('aria-label', 'Drag widget to reposition');
+            handle.setAttribute('title', 'Drag to move');
+            handle.setAttribute('tabindex', '0');
+            // insert before the actions list so it appears on the left edge
+            widget.insertBefore(handle, widget.firstChild);
+        }
+
+        // Storage key used to persist the widget top position.
+        // Prefer localStorage so position persists across pages and sessions;
+        // fall back to sessionStorage if localStorage isn't available.
+        const STORAGE_KEY = 'sams_contact_widget_top';
+        function readStored() {
+            try { return localStorage.getItem(STORAGE_KEY) ?? sessionStorage.getItem(STORAGE_KEY); }
+            catch (e) { return sessionStorage.getItem(STORAGE_KEY); }
+        }
+        function saveStored(val) {
+            try { localStorage.setItem(STORAGE_KEY, val); }
+            catch (e) { sessionStorage.setItem(STORAGE_KEY, val); }
+        }
+
+        const stored = readStored();
+        if (stored && window.innerWidth > 480) {
+            // apply px value and remove the -50% offset so top is exact
+            widget.style.setProperty('--contact-top', stored + 'px');
+            widget.style.setProperty('--contact-offset', '0px');
+        }
+
+        // Helper to clamp the top position into the viewport
+        function clampTop(topPx) {
+            const min = 8; // minimal distance from top
+            const max = Math.max(8, window.innerHeight - widget.offsetHeight - 8);
+            return Math.min(max, Math.max(min, Math.round(topPx)));
+        }
+
+        // Add pointer drag handling
+        let dragging = false;
+        let startY = 0;
+        let startTop = 0;
+        let moved = false;
+
+        function onPointerDown(e) {
+            // Ignore right-click or secondary buttons
+            if (e.button && e.button !== 0) return;
+
+            // Do not start a drag if viewport is small and widget is bottom-fixed
+            if (window.innerWidth <= 480) return;
+
+            dragging = true;
+            moved = false;
+            startY = e.clientY || (e.touches && e.touches[0] && e.touches[0].clientY) || 0;
+            // compute current top in px
+            const rect = widget.getBoundingClientRect();
+            startTop = rect.top;
+
+            // capture pointer for smooth tracking
+            if (e.pointerId) handle.setPointerCapture(e.pointerId);
+
+            document.addEventListener('pointermove', onPointerMove);
+            document.addEventListener('pointerup', onPointerUp, { once: true });
+            e.preventDefault();
+        }
+
+        function onPointerMove(e) {
+            if (!dragging) return;
+            const currentY = e.clientY || (e.touches && e.touches[0] && e.touches[0].clientY) || 0;
+            const delta = currentY - startY;
+            if (Math.abs(delta) > 4) moved = true;
+
+            const newTop = clampTop(startTop + delta);
+            widget.style.setProperty('--contact-top', newTop + 'px');
+            widget.style.setProperty('--contact-offset', '0px');
+        }
+
+        function onPointerUp(e) {
+            if (!dragging) return;
+            dragging = false;
+            document.removeEventListener('pointermove', onPointerMove);
+
+            // Save only if moved significantly
+            if (moved) {
+                // read computed top value as px
+                const topStyle = getComputedStyle(widget).getPropertyValue('top').trim();
+                let value = topStyle;
+                if (value.endsWith('%')) {
+                    // convert percent to px
+                    const pct = parseFloat(value) / 100;
+                    value = Math.round(pct * window.innerHeight);
+                } else if (value.endsWith('px')) {
+                    value = parseInt(value, 10);
+                } else {
+                    value = parseInt(value, 10) || 0;
+                }
+                const clamped = clampTop(value);
+                saveStored(clamped);
+            }
+
+            // If user dragged, briefly prevent clicks on the underlying buttons
+            if (moved) {
+                let preventClick = (ev) => {
+                    ev.stopPropagation();
+                    ev.preventDefault();
+                    ev.stopImmediatePropagation();
+                };
+
+                const btns = widget.querySelectorAll('.contact-btn');
+                btns.forEach(b => b.addEventListener('click', preventClick, { once: true }));
+                // also ensure touchmove listeners removed and pointer capture released
+                document.removeEventListener('touchmove', onPointerMove);
+                try { if (e && e.pointerId && handle.releasePointerCapture) handle.releasePointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+                stopDraggingVisuals();
+                setTimeout(() => { /* allow clicks again */ }, 30);
+            }
+        }
+
+        // Keyboard controls on the handle for accessibility
+        handle.addEventListener('keydown', function(e) {
+            // no keyboard repositioning on small screens
+            if (window.innerWidth <= 480) return;
+
+            const step = e.shiftKey ? 48 : 12; // larger step when shift is held
+
+            let topStyle = getComputedStyle(widget).getPropertyValue('top').trim();
+            let current = 0;
+            if (topStyle.endsWith('%')) {
+                current = Math.round(parseFloat(topStyle) / 100 * window.innerHeight);
+            } else if (topStyle.endsWith('px')) {
+                current = parseInt(topStyle, 10);
+            }
+
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                const candidate = clampTop(current - step);
+                widget.style.setProperty('--contact-top', candidate + 'px');
+                widget.style.setProperty('--contact-offset', '0px');
+                saveStored(candidate);
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                const candidate = clampTop(current + step);
+                widget.style.setProperty('--contact-top', candidate + 'px');
+                widget.style.setProperty('--contact-offset', '0px');
+                saveStored(candidate);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                const candidate = clampTop(8);
+                widget.style.setProperty('--contact-top', candidate + 'px');
+                widget.style.setProperty('--contact-offset', '0px');
+                saveStored(candidate);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                const candidate = clampTop(window.innerHeight - widget.offsetHeight - 8);
+                widget.style.setProperty('--contact-top', candidate + 'px');
+                widget.style.setProperty('--contact-offset', '0px');
+                saveStored(candidate);
+            }
+        });
+
+        // Accessibility hint while dragging
+        function startDraggingVisuals() {
+            handle.setAttribute('aria-grabbed', 'true');
+            widget.classList.add('dragging');
+        }
+        function stopDraggingVisuals() {
+            handle.removeAttribute('aria-grabbed');
+            widget.classList.remove('dragging');
+        }
+
+        // Attach pointer events (preferred) and touch fallbacks for older browsers
+        handle.addEventListener('pointerdown', function(e) { startDraggingVisuals(); onPointerDown(e); }, { passive: false });
+        handle.addEventListener('touchstart', function(e) { startDraggingVisuals(); onPointerDown(e); }, { passive: false });
+        // Keep listening for touchmove if browser doesn't support pointer events
+        handle.addEventListener('touchmove', onPointerMove, { passive: false });
+        document.addEventListener('touchend', function(e) { onPointerUp(e); stopDraggingVisuals(); }, { passive: true });
+
+        // Reset session storage if window is resized to tiny screen
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 480) {
+                // clear any stored px positioning so widget returns to bottom-fixed on mobile
+                try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* ignore */ }
+                try { sessionStorage.removeItem(STORAGE_KEY); } catch (e) { /* ignore */ }
+                widget.style.removeProperty('--contact-top');
+                widget.style.setProperty('--contact-offset', '0px');
+            }
+        });
     }
 
     // ============================================
