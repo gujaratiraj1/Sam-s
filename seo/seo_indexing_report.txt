@@ -1,0 +1,69 @@
+SEO indexing audit report
+Total keywords: 63
+
+PAGE: interior-designers-bangalore.html | keyword: "Luxury interior designers in Bangalore" | exists: yes | title_match: False | h1_match: True | anywhere: True | anchor_found: False | priority: High
+PAGE: interior-designers-bangalore.html | keyword: "Best interior designers in Bangalore" | exists: yes | title_match: True | h1_match: False | anywhere: True | anchor_found: False | priority: High
+PAGE: interior-designers-bangalore.html | keyword: "Top interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: True | anchor_found: False | priority: High
+PAGE: interior-designers-bangalore.html | keyword: "Interior designers Bangalore near me" | exists: yes | title_match: False | h1_match: False | anywhere: True | anchor_found: False | priority: High
+PAGE: about.html | keyword: "Interior designers in Bangalore reviews" | exists: yes | title_match: False | h1_match: False | anywhere: True | anchor_found: False | priority: High
+PAGE: services.html | keyword: "Luxury home interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: True | anchor_found: False | priority: High
+PAGE: services.html#modular-kitchens | keyword: "Modular kitchen designers in Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: True | anchor_found: True | priority: High
+PAGE: blog.html | keyword: "Modular kitchen design Bangalore cost" | exists: yes | title_match: False | h1_match: False | anywhere: True | anchor_found: False | priority: High
+PAGE: services.html#modular-kitchens | keyword: "Modular kitchen installation Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: True | priority: High
+PAGE: services.html#modular-kitchens | keyword: "Best modular kitchen designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: True | anchor_found: True | priority: High
+PAGE: services.html | keyword: "Office interior designers in Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: services.html | keyword: "Commercial interior design Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: services.html | keyword: "Affordable interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: True | anchor_found: False | priority: High
+PAGE: services.html | keyword: "Budget interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: blog.html | keyword: "Interior designers Bangalore price list" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: interior-designers-bangalore.html | keyword: "Interior design firms in Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: portfolio.html | keyword: "Home interior designers Bangalore portfolio" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: services.html | keyword: "Residential interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: services.html | keyword: "Interior design consultancy Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: contact.html | keyword: "Interior designers Bangalore phone number" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Interior design companies Bangalore list" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: blog.html | keyword: "Top rated interior designers Bangalore 2025" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: post.html | keyword: "Best luxury interior designers in Bangalore for apartments" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html | keyword: "Interior designers for villas Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html | keyword: "Small apartment interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Indian style interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html | keyword: "Modern interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Minimalist interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Interior designers Bangalore cost per sq ft" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html#modular-kitchens | keyword: "Modular kitchen designers near me Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: True | priority: High
+PAGE: services.html#modular-kitchens | keyword: "Luxury kitchen designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: True | priority: High
+PAGE: services.html | keyword: "Office interior design firms Bangalore near me" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html | keyword: "Corporate office interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html | keyword: "Commercial fit out contractors Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: about.html | keyword: "Interior designers Bangalore Google reviews" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: portfolio.html | keyword: "Interior designers Bangalore Instagram portfolio" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Best residential interior designers in Bangalore 2025" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: about.html | keyword: "Top interior design studios Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: services.html | keyword: "Home renovation interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html | keyword: "Luxury office interior designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html | keyword: "Custom furniture makers Bangalore interiors" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: contact.html | keyword: "Interior design consultation Bangalore charges" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Modular kitchen designs Bangalore ideas" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: contact.html | keyword: "Interior design estimate Bangalore free" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: contact.html | keyword: "Hire interior designer Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: portfolio.html | keyword: "Interior design case study Bangalore projects" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: about.html | keyword: "Interior designers Bangalore awards" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Sustainable interior designers Bangalore eco-friendly" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Modular kitchen maintenance Bangalore after service" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: contact.html | keyword: "Interior designer consultation near me Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: blog.html | keyword: "Top rated modular kitchen companies Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: services.html | keyword: "Interior designers Bangalore for office refurbishment" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html#modular-kitchens | keyword: "Affordable modular kitchen designers Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: True | priority: High
+PAGE: about.html | keyword: "High end interior designers Bangalore villas" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: about.html | keyword: "Interior designers Bangalore testimonials and reviews" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+PAGE: contact.html | keyword: "Interior design companies Bangalore contact" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Interior designers Bangalore comparison" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: contact.html | keyword: "Interior designer near me Bangalore 24/7" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Low
+PAGE: services.html | keyword: "Interior design firm Bangalore best for apartments" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html#modular-kitchens | keyword: "Best kitchens designers Bangalore turnkey" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: True | priority: Medium
+PAGE: about.html | keyword: "Interior designers Bangalore with showroom" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: services.html | keyword: "Top office fit out companies Bangalore" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: Medium
+PAGE: blog.html | keyword: "Interior designers Bangalore price range 1BHK 2BHK 3BHK" | exists: yes | title_match: False | h1_match: False | anywhere: False | anchor_found: False | priority: High
+
+Summary
+Pages missing: 0
